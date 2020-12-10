@@ -2,5 +2,5 @@
 <app-produto></app-produto>
 <app-cliente [nome]="'Kalila'" [endereco]="'Avenida Salvador'" [entrega]="'true'" (submitEvent)="onSubmit()">
 </app-cliente>
-<app-endereco  [rua]="'Avenida Salvador'" [numero]="20" [bairro]="'centro'" [cep]="40000-000"></app-endereco>
+<app-endereco  [rua]="'Avenida Salvador'" [numero]="20" [bairro]="'centro'" [cep]="40000-000" (salvarEndereco)="onSubmitEndereco($event)"> </app-endereco>
 <app-pedido></app-pedido>

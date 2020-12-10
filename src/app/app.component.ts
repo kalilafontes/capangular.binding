@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { item } from './produto/produto.component';
-//import { cliente } from './cliente/cliente.component';
 import { Cliente, ICliente} from 'src/app/model/Cliente';
+import { Endereco, IEndereco} from 'src/app/model/Endereco';
 import { pedido } from './pedido/pedido.component';
 
 @Component({
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   pedido:pedido = {numero:1, valor:0, entrega: false, itens: new Array<item>() };  
   pedidoConcluido = false;  
   model:ICliente = {nome: "", endereco: "", entrega: false};   
+  endereco:IEndereco = {rua: "", numero: 0,bairro: "", cep:0 }
 
   somaProdutos(itens: Array<item>): number {
     let somaProdutos = 0;
@@ -30,6 +31,11 @@ export class AppComponent implements OnInit{
 
   onSubmit() { 
     console.log(this.model);
+ 
+  }
+
+  onSubmitEndereco(event: any) { 
+    console.log(event);
  
   }
 

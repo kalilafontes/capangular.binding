@@ -15,7 +15,7 @@ export class ClienteComponent implements OnInit {
    @Input() endereco:string="";
    @Input() entrega:string="";
 
-   @Output() submitEvent = new EventEmitter();
+   @Output() submitEvent = new EventEmitter<any>();
 
 
 

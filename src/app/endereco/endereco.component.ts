@@ -13,6 +13,8 @@ export class EnderecoComponent implements OnInit {
   @Input() bairro:string="";
   @Input() cep:number=0;
 
+  @Output('salvarEndereco') submitEvent = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +22,10 @@ export class EnderecoComponent implements OnInit {
     this.endereco.numero = this.numero;
     this.endereco.bairro = this.bairro;
     this.endereco.cep = this.cep;
+  }
+
+  onEnviarEndereco(){
+    this.submitEvent.emit(this.endereco);
   }
 
 }

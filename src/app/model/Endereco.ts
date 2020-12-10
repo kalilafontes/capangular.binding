@@ -12,7 +12,7 @@ export class Endereco{
   
 }
 
-export interface Endereco{
+export interface IEndereco{
     rua: string,
     numero: number,
     bairro: string,
