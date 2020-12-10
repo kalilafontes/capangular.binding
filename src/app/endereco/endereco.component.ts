@@ -8,9 +8,18 @@ import { FormsModule } from '@angular/forms';
 })
 export class EnderecoComponent implements OnInit {
   endereco:endereco = {rua: " ", numero: 0, bairro: " ", cep: 0,};  
+  @Input() rua:string="";
+  @Input() numero:number=0;
+  @Input() bairro:string="";
+  @Input() cep:number=0;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.endereco.rua = this.rua;
+    this.endereco.numero = this.numero;
+    this.endereco.bairro = this.bairro;
+    this.endereco.cep = this.cep;
   }
 
 }

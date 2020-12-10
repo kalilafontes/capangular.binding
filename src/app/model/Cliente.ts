@@ -4,13 +4,13 @@ import { Endereco } from "./Endereco";
 export class Cliente extends Endereco{
     nome: string;
     preco: number;
-    quantidade: number;
+    entrega: boolean;
     constructor(nomeProduto: string, precoProduto: number, quantidadeProduto: number,
                  ruaEndereco: string, numeroEndereco: number, bairroEndereco: string, cepEndereco: number) {
       super(ruaEndereco, numeroEndereco, bairroEndereco, cepEndereco);
       this.nome = nomeProduto;
       this.preco = precoProduto;
-      this.quantidade = quantidadeProduto;
+      this.entrega = true;
     } 
 
 
@@ -18,6 +18,7 @@ export class Cliente extends Endereco{
 
 export interface ICliente{
     nome: string,
-    pedido: number,
+    endereco: string,
+    entrega: boolean,
 }
 

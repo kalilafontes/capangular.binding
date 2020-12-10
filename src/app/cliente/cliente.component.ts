@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Cliente, ICliente} from 'src/app/model/Cliente';
+
 import { item } from '../produto/produto.component';
 import { pedido } from '../pedido/pedido.component';
 
@@ -8,7 +10,7 @@ import { pedido } from '../pedido/pedido.component';
   styleUrls: ['../app.component.css']
 })
 export class ClienteComponent implements OnInit {
-   public model:cliente = {nome: " ", endereco: "", entrega: false};  
+   public model:ICliente = {nome: " ", endereco: "", entrega: false};  
    @Input() nome:string="";
    @Input() endereco:string="";
    @Input() entrega:string="";
@@ -30,8 +32,8 @@ export class ClienteComponent implements OnInit {
   }
 }
 
-export interface cliente {
+/* export interface cliente {
   nome: string,
   endereco: string,
   entrega: boolean,
-}
+} */

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { item } from '../produto/produto.component';
-import { cliente } from '../cliente/cliente.component';
+//import { cliente } from '../cliente/cliente.component';
+import { Cliente, ICliente} from 'src/app/model/Cliente';
 
 @Component({
   selector: 'app-pedido',
@@ -11,7 +12,7 @@ export class PedidoComponent implements OnInit {
 
   public listProdutos: Array<item> = new Array<item>();
   public itens: Array<item> = new Array<item>();
-  model:cliente = {nome: " ", endereco: "", entrega: false};  
+  model:ICliente = {nome: " ", endereco: "", entrega: false};  
   pedido:pedido = {numero:1, valor:0, entrega: false, itens: new Array<item>() };  
   pedidoConcluido = false;  
 

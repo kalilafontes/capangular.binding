@@ -1,8 +1,8 @@
 
-<form action="" style="width: 500px;">
+<form action="" style="width: 500px; margin-left:20px;">
   <h1>Endereço</h1>
   <label for="rua">Rua</label>
-  <input type="number" [(ngModel)]="endereco.rua" name="rua">
+  <input type="text" [(ngModel)]="endereco.rua" name="rua">
 
   <label for="numero">Número</label>
   <input type="text" [(ngModel)]="endereco.numero" name="numero">
@@ -13,5 +13,6 @@
   <label for="cep">CEP</label>
   <input type="text" [(ngModel)]="endereco.cep" name="cep">  
 
-  <input type="submit" value="Salvar" >
+  <button class="btn waves-effect waves-light" >Salvar        
+  </button> 
 </form>
