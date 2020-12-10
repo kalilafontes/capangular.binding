@@ -1,0 +1,24 @@
+<form #pedidoForm="ngForm" class="grid-pedido">   
+
+  <div class="form-group">
+    <div style="width: 400px;">
+        <p>Insira aqui seus dados:</p>
+    </div>
+    <div class="input-field" col m6>
+        <label for="nome">Nome do Cliente:</label>
+        <input [(ngModel)]="model.nome" name="nome" type="text" >
+    </div>
+    <div class="input-field" col m6>
+        <label for="endereco">Endereço:</label>
+        <input [(ngModel)]="model.endereco" name="endereco" type="text">
+    </div>       
+    <div class="checkbox-submit">               
+        <label for="entrega">
+            <input [(ngModel)]="model.entrega" name="entrega" type="checkbox" />  
+            <span>Entrega</span>   
+        </label>        
+        <button class="btn waves-effect waves-light" (click)="onEnviar()">Enviar        
+        </button> 
+    </div>  
+  </div>
+</form>  

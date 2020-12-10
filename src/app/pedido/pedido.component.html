@@ -1,0 +1,28 @@
+<div>  
+  <h1>Pedido Concluído</h1>
+  <table border="1">
+      <tr class="table-top">
+          <td>Descrição</td>
+          <td>Categoria</td>
+          <td>Valor</td>
+          <td>Quantidade</td>
+      </tr>
+  
+      <tr class="cart-item" *ngFor="let item of listProdutos">
+          <td>{{ item.descricao }}</td>
+          <td>{{ item.categoria }}</td>
+          <td>{{ item.preco }}</td>
+          <td>{{item.quantidade}}</td>
+      </tr>         
+      
+  </table>    
+  <label for="pedido">Valor Total do Pedido</label>
+
+  <p [(ngModel)]="pedido.valor" name="pedido" type="text" >{{pedido.valor | currency:'BRL':true:'1.2-2'}} </p>
+
+  <label for="pedido">Dados do Cliente</label>
+  <p>Nome: {{model.nome}} </p>
+  <p>Endereço: {{model.endereco}} </p>
+  <!--  <input [(ngModel)]="pedido.valor" name="pedido" type="text"> -->
+  <p>Obrigada por realizar o pedido!</p>
+</div>
