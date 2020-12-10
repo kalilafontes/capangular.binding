@@ -29,8 +29,8 @@ export class AppComponent implements OnInit{
     return somaProdutos;
   } 
 
-  onSubmit() { 
-    console.log(this.model);
+  onSubmit(event: any) { 
+    console.log(event);
  
   }
 
