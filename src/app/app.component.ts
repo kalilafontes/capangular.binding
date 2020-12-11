@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { item } from './produto/produto.component';
-import { Cliente, ICliente} from 'src/app/model/Cliente';
-import { Endereco, IEndereco} from 'src/app/model/Endereco';
+import { Cliente} from 'src/app/model/cliente.model';
+import { Endereco} from 'src/app/model/endereco.model';
 import { pedido } from './pedido/pedido.component';
 
 @Component({
@@ -17,8 +17,8 @@ export class AppComponent implements OnInit{
   itens: Array<item> = [];
   pedido:pedido = {numero:1, valor:0, entrega: false, itens: new Array<item>() };  
   pedidoConcluido = false;  
-  model:ICliente = {nome: "", endereco: "", entrega: false};   
-  endereco:IEndereco = {rua: "", numero: 0,bairro: "", cep:0 }
+  model:Cliente = {nome: "", telefone: "", entrega: false};   
+  endereco:Endereco = {rua: "", numero: 0,bairro: "", cep:0 }
 
   somaProdutos(itens: Array<item>): number {
     let somaProdutos = 0;

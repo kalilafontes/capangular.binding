@@ -1,5 +1,5 @@
 
-<form action="" style="width: 500px; margin-left:20px;">
+<form class="grid-retorno"style="margin: 0 auto; width: 500px;">
   <h1>Endereço</h1>
   <label for="rua">Rua</label>
   <input type="text" [(ngModel)]="endereco.rua" name="rua">
@@ -13,6 +13,6 @@
   <label for="cep">CEP</label>
   <input type="text" [(ngModel)]="endereco.cep" name="cep">  
 
-  <button class="btn waves-effect waves-light" (click)="onEnviarEndereco()">Salvar        
+  <button class="btn waves-effect waves-light" style="width: 80px; text-align: end;" (click)="onEnviar()">Salvar        
   </button> 
 </form>

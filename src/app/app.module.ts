@@ -9,6 +9,8 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { EnderecoComponent } from './endereco/endereco.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
+import { FormadepagamentoComponent } from './formadepagamento/formadepagamento.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { EnderecoComponent } from './endereco/endereco.component';
     ClienteComponent,
     PedidoComponent,
     ProdutoComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    FornecedorComponent,
+    FormadepagamentoComponent
   ],
   imports: [
     BrowserModule,

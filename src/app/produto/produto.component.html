@@ -16,10 +16,15 @@
               <td>
                   <input type="number" [(ngModel)]="item.quantidade" name="quantidade" value="0" min="0">
               </td>
-          </tr>         
+          </tr>      
+          <button class="btn waves-effect waves-light" (click)="onSend()">Enviar        
+        </button>    
           
       </table>    
      
   </div>
-   
+  <p [hidden] = "!error" style="color: red;">
+    {{ errorDesc }}
+  </p>
 </form> 
+    

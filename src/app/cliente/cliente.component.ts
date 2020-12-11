@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { Cliente, ICliente} from 'src/app/model/Cliente';
-
-import { item } from '../produto/produto.component';
-import { pedido } from '../pedido/pedido.component';
+import { Cliente} from 'src/app/model/cliente.model';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Endereco } from '../model/endereco.model';
 
 @Component({
   selector: 'app-cliente',
@@ -10,30 +10,28 @@ import { pedido } from '../pedido/pedido.component';
   styleUrls: ['../app.component.css']
 })
 export class ClienteComponent implements OnInit {
-   public model:ICliente = {nome: " ", endereco: "", entrega: false};  
-   @Input() nome:string="";
-   @Input() endereco:string="";
-   @Input() entrega:string="";
+  model:Cliente = {nome: " ", telefone: "", entrega: false};  
+  endereco:Endereco = {}
+  error:boolean = false;
 
-   @Output() submitEvent = new EventEmitter<any>();
-
-
-
-  constructor() { }
+  constructor(private router: Router) { }
   
+  onSend(event: any){
+    console.log(this.model);
+    console.log(event);
+    if (this.model.nome == "" || event.rua ==  " " ) {
+      this.error = true;      
+      alert("Preencha os campos");
+    } 
+    
+     else{
+      this.error = false;
+      this.router.navigate(['/produto']);
+    }
+  }
+
   ngOnInit(): void {
-    this.model.nome = this.nome;
-    this.model.endereco = this.endereco;
-    this.model.entrega = true;
-  }
-  
-  onEnviar(){
-    this.submitEvent.emit(this.model);
-  }
-}
 
-/* export interface cliente {
-  nome: string,
-  endereco: string,
-  entrega: boolean,
-} */
+  }
+
+}

@@ -1,0 +1,40 @@
+<div  class="form-group" >
+  <h1>Cadastrar dados do Fornecedor</h1>
+  <form #form="ngForm"  (ngSubmit)="onSubmitFornecedor(form)" style="width: 500px;" novalidate>
+
+    <label for="nome">Nome</label>
+    <input name="nome" #nome="ngModel" ngModel required/><br>
+
+    <label for="endereco">Endereço</label>
+    <input name="endereco" #endereco="ngModel" ngModel /><br>
+
+    <label for="cnpj">CNPJ</label>
+    <input name="cnpj"  #cnpj="ngModel"  ngModel /><br>
+
+
+    <button class="btn waves-effect waves-light">Enviar        
+    </button> 
+    <p [hidden] = "!error" style="color: red;">
+      {{ errorDesc }}
+    </p>
+  </form>  
+</div>
+<div class="grid-retorno" style="width: 500px">
+  <p>Nome do Fornecedor: {{ nome.value  }}</p>
+  <p>Endereço do Fornecedor: {{ endereco.value  }}</p>
+  <p>CNPJ do Fornecedor: {{ cnpj.value  }}</p>
+  <h2>Outros Fornecedores</h2>
+<table border="1">
+  <tr>
+    <td><b>Nome</b></td>
+    <td><b>Endereço</b></td>
+    <td><b>CNPJ</b></td>
+  </tr>
+  <tr *ngFor="let fornecedor of fornecedores">
+    <td>{{fornecedor.nome}}</td>
+    <td>{{fornecedor.endereco}}</td>
+    <td>{{fornecedor.cnpj}}</td>
+  </tr>
+</table>
+  
+</div>

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Produto, IProduto } from 'src/app/model/Produto';
-
+import { Router } from '@angular/router';
+import { Produto } from 'src/app/model/produto.model';
 
 @Component({
   selector: 'app-produto',
@@ -8,10 +8,27 @@ import { Produto, IProduto } from 'src/app/model/Produto';
   styleUrls: ['../app.component.css']
 })
 export class ProdutoComponent implements OnInit {
-  @Input() itens: Array<item> = [];
+  itens: Array<item> = new Array<item>();
+  listProdutos: Array<item> = new Array<item>();
+  error:boolean = false;
+  errorDesc:string = "";
+
+  constructor(private router: Router) { }
   
-  constructor() { }
-  
+  onSend(){
+    this.listProdutos = this.itens.filter((item) => { return item.quantidade > 0; });
+
+    console.log(this.listProdutos);
+
+    if(!this.listProdutos[0]){
+      this.error = true;
+      this.errorDesc = "Escolha pelo menos um produto"
+    } else{
+      this.error = false;
+      this.router.navigate(['/pedido']);
+    }
+  }
+
   ngOnInit(): void {
     let produtos = [
       {

@@ -1,6 +1,13 @@
-
-<app-produto></app-produto>
-<app-cliente [nome]="'Kalila'" [endereco]="'Avenida Salvador'" [entrega]="'true'" (submitEvent)="onSubmit($event)">
-</app-cliente>
-<app-endereco  [rua]="'Avenida Salvador'" [numero]="20" [bairro]="'centro'" [cep]="40000-000" (salvarEndereco)="onSubmitEndereco($event)"> </app-endereco>
-<app-pedido></app-pedido>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="center">
+        <li><a routerLink="/cliente" routerLinkActive="active">Cliente</a></li>
+        <li><a routerLink="/produto" routerLinkActive="active">Produto</a></li>
+        <li><a routerLink="/pedido" routerLinkActive="active">Pedido</a></li>
+        <li><a routerLink="/fornecedor" routerLinkActive="active">Fornecedor</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>

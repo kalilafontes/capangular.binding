@@ -1,4 +1,4 @@
-import { IEntrega } from "./Entrega";
+/* import { IEntrega } from "./Entrega";
 
 export class Pedido{  
 
@@ -14,10 +14,10 @@ export class Pedido{
             return pedido.valor
         }
     }
-}
+} */
 
 
-export interface IPedido{
+export interface Pedido{
     numero: number,
     valor: number,
     desconto: number,
