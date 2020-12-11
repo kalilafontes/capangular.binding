@@ -1,6 +1,17 @@
 .nav-wrapper {
   background-color: #26a69a !important;
 }
+
+.nav-wrapper ul.center {
+  display: block;
+  width: auto;
+}
+
+.nav-wrapper > ul.center li {
+  float: none;
+  display: inline-block;
+}
+
 h1 {
   font-size: 30px;
   text-align: center;
